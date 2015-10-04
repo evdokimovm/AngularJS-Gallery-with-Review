@@ -35,17 +35,19 @@
 						{{reviewCtrl.review.body}}
 					<cite>by: {{reviewCtrl.review.author}}</cite>
 				</blockquote>
-					<select ng-model="reviewCtrl.review.stars">
-						<option value="1">1 star</option>
-						<option value="2">2 star</option>
-						<option value="3">3 star</option>
-						<option value="4">4 star</option>
-						<option value="5">5 star</option>
-					</select>
-					<textarea ng-model="reviewCtrl.review.body"></textarea>
-					<label>by:</label>
-					<input ng-model="reviewCtrl.review.author" type="email" />
-					<input type="submit" value="Submit" />
+					<div class="form-group">
+						<select class="form-control" ng-model="reviewCtrl.review.stars">
+							<option value="1">1 star</option>
+							<option value="2">2 star</option>
+							<option value="3">3 star</option>
+							<option value="4">4 star</option>
+							<option value="5">5 star</option>
+						</select>
+						<textarea class="form-control" ng-model="reviewCtrl.review.body"></textarea>
+						<label>by:</label>
+						<input class="form-control" ng-model="reviewCtrl.review.author" type="email" />
+						<input class="btn btn-primary pull-right" type="submit" value="Submit" />
+					</div>
 				</form>
 			</div>
 		</div>
