@@ -29,6 +29,24 @@
 						{{review.body}}
 					<cite>by: {{review.author}}</cite>
 				</blockquote>
+				<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+				<blockquote>
+					<b>Stars: {{reviewCtrl.review.stars}}</b>
+						{{reviewCtrl.review.body}}
+					<cite>by: {{reviewCtrl.review.author}}</cite>
+				</blockquote>
+					<select ng-model="reviewCtrl.review.stars">
+						<option value="1">1 star</option>
+						<option value="2">2 star</option>
+						<option value="3">3 star</option>
+						<option value="4">4 star</option>
+						<option value="5">5 star</option>
+					</select>
+					<textarea ng-model="reviewCtrl.review.body"></textarea>
+					<label>by:</label>
+					<input ng-model="reviewCtrl.review.author" type="email" />
+					<input type="submit" value="Submit" />
+				</form>
 			</div>
 		</div>
 	</div>
