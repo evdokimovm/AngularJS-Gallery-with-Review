@@ -29,23 +29,24 @@
 						{{review.body}}
 					<cite>by: {{review.author}}</cite>
 				</blockquote>
-				<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+				<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)" novalidate>
 				<blockquote>
 					<b>Stars: {{reviewCtrl.review.stars}}</b>
 						{{reviewCtrl.review.body}}
 					<cite>by: {{reviewCtrl.review.author}}</cite>
 				</blockquote>
 					<div class="form-group">
-						<select class="form-control" ng-model="reviewCtrl.review.stars">
+						<select class="form-control" ng-model="reviewCtrl.review.stars" required>
 							<option value="1">1 star</option>
 							<option value="2">2 star</option>
 							<option value="3">3 star</option>
 							<option value="4">4 star</option>
 							<option value="5">5 star</option>
 						</select>
-						<textarea class="form-control" ng-model="reviewCtrl.review.body"></textarea>
+						<textarea class="form-control" ng-model="reviewCtrl.review.body" required></textarea>
 						<label>by:</label>
-						<input class="form-control" ng-model="reviewCtrl.review.author" type="email" />
+						<input class="form-control" ng-model="reviewCtrl.review.author" type="email" required/>
+						<div> reviewForm is {{reviewForm.$valid}} </div> <!-- Print Forms Validity -->
 						<input class="btn btn-primary pull-right" type="submit" value="Submit" />
 					</div>
 				</form>
