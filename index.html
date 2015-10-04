@@ -10,6 +10,21 @@
 <body ng-controller="Controller as store">
 	<div class="container list-group-item" ng-repeat="product in store.products">
 		<div ng-controller="PanelController as panel">
+			
+			<h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+
+
+			<div class="gallery">
+			<!-- <div class="img-wrap">
+						<img ng-src="{{product.images[0]}}" />
+				</div> -->
+				<ul class="img-thumbnails clearfix">
+					<li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+						<img ng-src="{{image}}" />
+					</li>
+				</ul>
+			</div>
+
 			<ul class="nav nav-pills">
 				<li ng-class="{ active:panel.isSelected(1) }"><a href ng-click="panel.selectTab(1)">Description</a></li>
 				<li ng-class="{ active:panel.isSelected(2) }"><a href ng-click="panel.selectTab(2)">Specifications</a></li>
